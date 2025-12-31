@@ -1,5 +1,6 @@
 
 export type CarbonScope = 'Scope 1' | 'Scope 2' | 'Scope 3';
+export type CertificationLevel = 'Bronze' | 'Silver' | 'Gold' | 'Platinum';
 
 export interface DataPoint {
   source: string;
@@ -15,12 +16,21 @@ export interface QuickWin {
   impact: 'High' | 'Medium' | 'Low';
   difficulty: 'Easy' | 'Moderate' | 'Challenging';
   category: 'Energy' | 'Logistics' | 'Waste' | 'Procurement';
-  financialSave: string; // Estimated monthly or yearly savings
+  financialSave: string;
+  taxBenefit?: string;
 }
 
 export interface Supplier {
   name: string;
   emailDraft: string;
+}
+
+export interface WhiteLabelConfig {
+  companyName: string;
+  primaryColor: string;
+  accentColor: string;
+  logoMode: 'default' | 'text-only';
+  consultantName: string;
 }
 
 export interface AuditResult {
@@ -29,8 +39,9 @@ export interface AuditResult {
   businessName: string;
   industry: string;
   auditDate: string;
-  estimatedCarbonScore: number; // kg CO2e
-  industryBenchmark: number; // 0 (Leader) to 100 (High Emitter)
+  estimatedCarbonScore: number;
+  industryBenchmark: number;
+  certificationLevel: CertificationLevel;
   trend: 'up' | 'down' | 'neutral';
   dataPoints: DataPoint[];
   quickWins: QuickWin[];
@@ -61,7 +72,7 @@ export interface MapResource {
   type: string;
 }
 
-export type AppView = 'dashboard' | 'upload' | 'history' | 'map' | 'audit-details';
+export type AppView = 'dashboard' | 'upload' | 'history' | 'map' | 'audit-details' | 'branding';
 
 export interface MonthlyEmissions {
   month: string;

@@ -1,6 +1,6 @@
 {
-  "name": "EcoTrack AI",
-  "description": "A sustainability auditor for SMEs that processes utility bills and shipping logs to generate carbon footprint reports and actionable green quick wins.",
+  "name": "EcoTrack",
+  "description": "A professional sustainability auditor for SMEs that processes utility bills and shipping logs to generate carbon footprint reports and actionable green quick wins based on GHG Protocol standards.",
   "requestFramePermissions": [
     "camera",
     "geolocation"
